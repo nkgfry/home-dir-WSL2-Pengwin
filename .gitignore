@@ -3,3 +3,6 @@
 !.spacemacs
 !.zshrc
 !.bashrc
+!/.config
+/.config/*
+!/.config/ranger
