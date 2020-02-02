@@ -157,10 +157,23 @@ bindkey -M vicmd 'j' history-beginning-search-forward
 stty eof undef
 # stty eof '^d'
 
-# Change PATH to only unix directories, node and npm were affected otherwise,
-# and wouldn't start properly with the Windows paths included.
-# PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/nkgfry/scripts:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Program\ Files/heroku/bin:/mnt/c/Users/nkgfr/AppData/Local/Programs/Microsoft\ VS\ Code/bin:/home/nkgfry/bin:/home/nkgfry/.cargo/bin:
-PATH=$(echo "$PATH" | sed -e 's/:\/home\/wrong\/dir$//')
+# Remove certain Windows paths so that native linux binaries are used instead
+function path_remove {
+  # Delete path by parts so we can never accidentally remove sub paths
+  PATH=${PATH//":$1:"/":"} # delete any instances in the middle
+  PATH=${PATH/#"$1:"/} # delete any instance at the beginning
+  PATH=${PATH/%":$1"/} # delete any instance in the at the end
+}
+path_remove "/mnt/c/Ruby25-x64/bin"
+path_remove "/mnt/c/Program Files/heroku/bin"
+path_remove "/mnt/c/Users/nkgfr/AppData/Roaming/npm"
+path_remove "/mnt/c/Program Files (x86)/GNUWin32/bin"
+path_remove "/mnt/c/Program Files/Git/usr/"
+path_remove "/mnt/c/Strawberry/c/bin"
+path_remove "/mnt/c/Strawberry/perl/site/bin"
+path_remove "/mnt/c/Strawberry/perl/bin"
+path_remove "/mnt/c/Program Files/Git/cmd"
+path_remove "/mnt/c/Program Files/nodejs/"
 
 # Needed to sync VIM clipboard with system clipboard
 # export DISPLAY=localhost:0.0
