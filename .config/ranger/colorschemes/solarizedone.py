@@ -31,11 +31,13 @@ class Solarized(ColorScheme):
             fg = default
             if context.selected:
                 attr = reverse
+                bg = default
             else:
                 attr = normal
             if context.empty or context.error:
                 fg = 235
-                bg = 160
+                # bg = 160
+                bg = default
             if context.border:
                 fg = default
             if context.media:
@@ -78,7 +80,9 @@ class Solarized(ColorScheme):
                 else:
                     fg = red
             if not context.selected and (context.cut or context.copied):
-                fg = 234
+                # original color very hard to see
+                # fg = 234
+                fg = 203
                 attr |= bold
             if context.main_column:
                 if context.selected:
