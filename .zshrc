@@ -122,13 +122,24 @@ alias 7='cd -7'
 alias 8='cd -8'
 alias 9='cd -9'
 
-alias la='ls -A'
-alias ll='ls -lh'
-alias lla='ls -lAh'
+# alias la='ls -A'
+# alias ll='ls -lh'
+# alias lla='ls -lAh'
 alias rn='ranger'
 alias xx='exit'
 alias exp='explorer.exe .'
 alias rg='rg --smart-case'
+alias v='vim'
+
+# exa bindings
+alias la='exa -a'
+alias ll='exa -al'
+alias lt='exa -aT --icons'
+alias lr='exa -aR'
+alias ls='exa'
+alias lsl='exa -l'
+alias lst='exa -T --icons'
+alias lsr='exa -R'
 
 
 # KEYBINDINGS
