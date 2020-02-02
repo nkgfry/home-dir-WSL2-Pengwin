@@ -130,6 +130,7 @@ alias xx='exit'
 alias exp='explorer.exe .'
 alias rg='rg --smart-case'
 alias v='vim'
+alias fd='fdfind -H'
 
 # exa bindings
 alias la='exa -a'

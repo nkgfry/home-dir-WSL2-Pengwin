@@ -31,7 +31,10 @@ class Solarized(ColorScheme):
             fg = default
             if context.selected:
                 attr = reverse
-                bg = default
+                # old value
+                # bg = default
+                # because of attr = reverse, this affects the highlight for regular selected files
+                fg = 244
             else:
                 attr = normal
             if context.empty or context.error:
