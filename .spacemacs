@@ -165,7 +165,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("consolas"
-                               :size 24
+                               :size 23
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -632,7 +632,7 @@ you should place your code here."
   (global-set-key (kbd "C-c C-M-<right>") 'centaur-tabs-move-current-tab-to-right)
 
   ;; Set custom avy keys
-  (setq avy-keys '(?a ?s ?f ?j ?l ?w ?r ?k ?x ?u ?o
+  (setq avy-keys '(?s ?f ?j ?l ?w ?r ?k ?x ?u ?o
                       ?i ?e ?c ?v ?n ?m ?d))
 
   ;; Set timeout to be instantaneous
